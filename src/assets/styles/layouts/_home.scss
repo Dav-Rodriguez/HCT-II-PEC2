@@ -1,31 +1,33 @@
 /*_home.scss*/
 
+@import "../variables";
+
 * {
   box-sizing: border-box;
 }
+
+/* ----- ESTILOS GENERALES ----- */
 
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin: 0;
   padding: 2rem;
-  font-family: $font-family-sans-serif;
+  margin: 0;
+  font-family: $font-body;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  color: $text-color;
+  background-color: $background-color;
 }
 
-
-
-logo {
+.logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
   max-width: 200px;
   height: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
 
   @media (min-width: $mqMinWidth) {
     max-width: none;
@@ -38,33 +40,39 @@ logo {
   text-align: center;
 }
 
-@import "../variables";
 
-/* ----- ESTILOS GENERALES ----- */
-body {
-  font-family: $font-body;
-  color: $text-color;
-  background-color: $background-color;
+.header-content {
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
+
+.title {
+  font-family: $font-heading;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.event-image {
+  border-radius: 10px;
+}
+
 
 /* ----- HEADER ----- */
 .header {
-  background-color: $primary-color;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
   text-align: center;
+  background-color: $primary-color;
 
   .header-top {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-  }
-
-  .logo {
-    width: 150px;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .nav-menu {
@@ -73,18 +81,18 @@ body {
     gap: 20px;
 
     a {
-      text-decoration: none;
-      color: $secondary-color;
       font-weight: bold;
+      color: $secondary-color;
+      text-decoration: none;
     }
   }
 
   .header-content {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
-  justify-items: center;
+  grid-template-columns: 1fr;
   gap: 20px;
+  justify-items: center;
 
   .event-image {
     grid-row: 1;
@@ -104,22 +112,7 @@ body {
 
 }
 
-.header-content {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-}
 
-.title {
-  font-family: $font-heading;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.event-image {
-  border-radius: 10px;
-}
 
 
 @supports not (display: grid) {
@@ -133,9 +126,9 @@ body {
 
 /* ----- MAIN ----- */
 .main {
-  background-color: white;
   padding: 40px;
   text-align: center;
+  background-color: white;
 
   .intro-text {
     font-size: 1.2rem;
@@ -145,15 +138,15 @@ body {
   .separator {
     width: 80%;
     height: 2px;
-    background-color: $accent-color;
     margin: 20px auto;
+    background-color: $accent-color;
   }
 
   .footer-navigation {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
 
     .small-logo {
@@ -166,9 +159,9 @@ body {
       gap: 15px;
 
       a {
-        text-decoration: none;
         font-weight: bold;
         color: $text-color;
+        text-decoration: none;
       }
     }
 
@@ -187,19 +180,19 @@ body {
 .footer {
   display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-  background-color: $secondary-color;
+    justify-content: space-between;
   padding: 20px;
   text-align: center;
+  background-color: $secondary-color;
 
   img {
     width: 120px;
   }
 
   p {
-    font-size: 0.9rem;
     margin-top: 10px;
+    font-size: 0.9rem;
   }
 }
 
@@ -215,8 +208,8 @@ body {
 
   .footer-navigation {
     flex-direction: column;
-    align-items: center;
     gap: 15px;
+    align-items: center;
   }
 }
 
@@ -227,8 +220,8 @@ body {
 
   .nav-menu {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
+    align-items: center;
   }
 
   .footer-navigation {
