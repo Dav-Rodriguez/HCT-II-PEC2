@@ -1,3 +1,5 @@
+/*_home.scss*/
+
 * {
   box-sizing: border-box;
 }
@@ -15,18 +17,9 @@ body {
   color: $uoc-corporate;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
-.uoc-logo {
+
+logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -39,19 +32,206 @@ body {
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
 .uoc-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
   text-align: center;
+}
+
+@import "../variables";
+
+/* ----- ESTILOS GENERALES ----- */
+body {
+  font-family: $font-body;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+/* ----- HEADER ----- */
+.header {
+  background-color: $primary-color;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .header-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+      font-weight: bold;
+    }
+  }
+
+  .header-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  gap: 20px;
+
+  .event-image {
+    grid-row: 1;
+  }
+
+  .title {
+    grid-row: 2;
+    font-size: 3rem;
+  }
+
+  .description {
+    grid-row: 3;
+    max-width: 600px;
+    text-align: center;
+  }
+}
+
+}
+
+.header-content {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.title {
+  font-family: $font-heading;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.event-image {
+  border-radius: 10px;
+}
+
+
+@supports not (display: grid) {
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ----- MAIN ----- */
+.main {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+
+  .intro-text {
+    font-size: 1.2rem;
+    color: $primary-color;
+  }
+
+  .separator {
+    width: 80%;
+    height: 2px;
+    background-color: $accent-color;
+    margin: 20px auto;
+  }
+
+  .footer-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .small-logo {
+      width: 80px;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $text-color;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+
+/* ----- FOOTER ----- */
+.footer {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  background-color: $secondary-color;
+  padding: 20px;
+  text-align: center;
+
+  img {
+    width: 120px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+}
+
+/* ----- RESPONSIVIDAD ----- */
+@include responsive('tablet') {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .header-content .description {
+    font-size: 1rem;
+  }
+
+  .footer-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@include responsive('mobile') {
+  .header {
+    padding: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-navigation {
+    flex-direction: column;
+  }
 }

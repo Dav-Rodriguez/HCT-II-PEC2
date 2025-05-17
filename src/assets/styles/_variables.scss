@@ -10,3 +10,19 @@ $uoc-masterbrand: #73edff;
 $uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
 
 $mqMinWidth: 420px;
+
+$primary-color: #226F54;
+$secondary-color: #87C38F;
+$accent-color: #F4A261;
+$background-color: #E1E5EE;
+$text-color: #1D3557;
+
+$font-heading: 'Poppins', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+$breakpoints: (
+  'mobile': 320px,
+  'tablet': 768px,
+  'laptop': 1024px,
+  'large': 1440px
+);

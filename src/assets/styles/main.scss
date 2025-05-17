@@ -1,3 +1,5 @@
+/*main.scss*/
+
 /**
  * Use this file to import partials.
  * Do not include SCSS code in this file.
@@ -19,6 +21,14 @@
 
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap');
+
+@mixin responsive($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
 
 /**
  * Import layouts
